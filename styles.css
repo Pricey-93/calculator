@@ -12,31 +12,33 @@ body {
     align-items: center;
 }
 #calculator-container {
-    width: 30%;
-    height: 40%;
+    width: 15%;
+    height: 25%;
     padding: 5px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    gap: 1px;
+    background-color: rgba(46, 42, 42, 0.849);
     border: 2px solid black;
     border-radius: 7px;
 }
 #sum-screen {
     grid-column: 1/5;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    background-color: rgba(31, 209, 25, 0.692);
+    background-color: rgba(186, 196, 186, 0.774);
 }
 #sum {
-    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
     font-size: large;
 }
-.num-btn {
+.operand-btn {
     background-color: aquamarine;
 }
-.operand-btn {
+.operator-btn {
     background-color: beige;
 }
 .clear-btn {
