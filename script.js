@@ -1,37 +1,49 @@
-function add (a, b) {
+let displayValue;
+const sum = document.getElementById("sum");
+let operand1;
+let operator;
+let operand2;
+
+function add(a, b) {
 	return a + b;
 }
-
-function subtract (a, b) {
+function subtract(a, b) {
 	return a - b;
 }
-
-function sum (array) {
-	let result= 0;
-	array.forEach(element => {
-		result += element;
-	});
-	return result;
+function multiply(a, b) {
+	return a * b;
 }
-
-function multiply (array) {
-	let result = array[0] * array[1]; 
-	if (array.length > 2)
-		for (i = 2; i < array.length; i++)
-			result *= array[i];
-	return result;
+function divide(a, b) {
+	return a / b;
 }
-
-function power(a, b) {
-	return a ** b;
+function operate(operator, operand1, operand2) {
+	switch (operator) {
+		case "+":
+			add(operand1, operand2);
+			break;
+		case "*":
+			multiply(operand1, operand2);
+			break;
+		case "-":
+			subtract(operand1, operand2);
+			break;
+		case "/":
+			divide(operand1, operand2);
+	}
 }
-
-function factorial(number) {
-	let result = number;
-	if (number <= 1)
-		result = 1;
-	else
-		while (number != 1)
-			result *= --number;
-	return result;
+function clear() {
+	displayValue = "";
+	sum.textContent = "";
+	operand1 = undefined;
+	operand2 = undefined;
+	operator = undefined;
+}
+function changeDisplay() {
+	sum.textContent = displayValue;
+}
+function addGlobalEventListener(type, selector, callback) {
+    document.addEventListener(type, e => {
+        if (e.target.matches(selector))
+            callback(e);
+    })
 }
